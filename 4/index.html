@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+			}
+			a {
+				text-decoration: none;
+			}
+			img {
+				display: block;
+			}
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			p {
+				margin: 0;
+			}
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				height: 500px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				gap: 5px;
+			}
+			input {
+				background-color: transparent;
+				color: rgb(253, 253, 253);
+				border: none;
+				border: rgb(126, 126, 126) solid 1px;
+				outline: none;
+				width: 200px;
+				padding: 10px;
+				border-radius: 660px;
+				backdrop-filter: blur(2px);
+				transition-property: background-color, color, border-radius, transform;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 300ms;
+			}
+
+			/* input::placeholder {
+				color: white;
+				transition-property: background-color, color, border-radius, transform;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 300ms;
+			} */
+
+			/* input:hover {
+				transform: translateY(-5px);
+			} */
+			button {
+				color: white;
+				background-color: rgb(143, 116, 116);
+				border: black solid 1px;
+				border-radius: 12px;
+				padding-left: 50px;
+				padding-right: 50px;
+				text-align: center;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				transition-property: background-color, color, border-radius, transform;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 300ms;
+			}
+			button:hover {
+				transform: translateY(-5px);
+				background-color: rgb(126, 102, 102);
+			}
+			h1 {
+				color: white;
+			}
+
+			.container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 5px;
+			}
+			.form-item {
+				display: inline-block;
+				vertical-align: top;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body id="vanta-canvas">
+		<div class="container">
+			<h1>Login</h1>
+			<div class="form-item">
+				<input id="input2" type="text" placeholder="login" />
+				<label class="form-label">login</label>
+			</div>
+			<div class="form-item">
+				<input id="input" type="text" placeholder="password" />
+				<label class="form-label">password</label>
+			</div>
+
+			<button id="btn">next</button>
+			<p id="check" style="color: rgb(255, 0, 0)"></p>
+		</div>
+
+		<script>
+			const check = document.getElementById('check')
+			const input = document.getElementById('input')
+			const input2 = document.getElementById('input2')
+			const btn = document.getElementById('btn')
+
+			const password = 'nikita123' // Строка, чтобы сравнение было точным
+			const login = 'nikita'
+
+			btn.addEventListener('click', function () {
+				let input2value = input2.value.trim()
+				let inputvalue = input.value.trim() // Убираем пробелы
+
+				if (input2value !== login && inputvalue !== password) {
+					check.textContent = 'incorect login or password'
+				} else if (input2value !== login) {
+					check.textContent = 'incorect login or password'
+				} else if (inputvalue !== password) {
+					check.textContent = 'incorect login or password'
+				} else {
+					window.location.href = 'iasd.html'
+				}
+			})
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+		<script>
+			VANTA.NET({
+				el: '#vanta-canvas',
+				mouseControls: true,
+				touchControls: true,
+				gyroControls: false,
+				minHeight: 200.0,
+				minWidth: 200.0,
+				scale: 1.0,
+				scaleMobile: 1.0,
+				color: 0x727272,
+				points: 17.0,
+				showDots: false,
+			})
+		</script>
+	</body>
+</html>
