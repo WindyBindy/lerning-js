@@ -1,0 +1,113 @@
+* {
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+img {
+	display: block;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 0;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 5px;
+}
+input {
+	background-color: rgb(3, 3, 3);
+	color: rgb(253, 253, 253);
+	border: none;
+	border: rgb(126, 126, 126) solid 1px;
+	outline: none;
+	width: 200px;
+	padding: 10px;
+	border-radius: 660px;
+	/* backdrop-filter: blur(2px); */
+	transition-property: background-color, color, border-radius, transform;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms;
+}
+
+/* input::placeholder {
+				color: white;
+				transition-property: background-color, color, border-radius, transform;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 300ms;
+			} */
+
+/* input:hover {
+				transform: translateY(-5px);
+			} */
+button {
+	color: white;
+	background-color: rgb(143, 116, 116);
+	border: black solid 1px;
+	border-radius: 12px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	transition-property: background-color, color, border-radius, transform;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms;
+}
+button:hover {
+	transform: translateY(-5px);
+	background-color: rgb(126, 102, 102);
+}
+h1 {
+	color: white;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+input {
+	width: 200px;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	outline: none;
+}
+
+label {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: #aaa;
+	pointer-events: none;
+	transition: 0.3s;
+}
+
+/* Анимация при фокусе и вводе текста */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+	top: 0;
+	font-size: 12px;
+	color: #007bff;
+	background: white;
+	padding: 0 5px;
+}
