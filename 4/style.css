@@ -29,7 +29,7 @@ body {
 	gap: 5px;
 }
 input {
-	background-color: rgb(3, 3, 3);
+	background-color: transparent;
 	color: rgb(253, 253, 253);
 	border: none;
 	border: rgb(126, 126, 126) solid 1px;
@@ -37,22 +37,15 @@ input {
 	width: 200px;
 	padding: 10px;
 	border-radius: 660px;
-	/* backdrop-filter: blur(2px); */
+	backdrop-filter: blur(2px);
 	transition-property: background-color, color, border-radius, transform;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 300ms;
 }
+input::placeholder {
+	color: white;
+}
 
-/* input::placeholder {
-				color: white;
-				transition-property: background-color, color, border-radius, transform;
-				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-				transition-duration: 300ms;
-			} */
-
-/* input:hover {
-				transform: translateY(-5px);
-			} */
 button {
 	color: white;
 	background-color: rgb(143, 116, 116);
@@ -81,33 +74,4 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	gap: 5px;
-}
-input {
-	width: 200px;
-	padding: 10px;
-	font-size: 16px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	outline: none;
-}
-
-label {
-	position: absolute;
-	left: 10px;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 16px;
-	color: #aaa;
-	pointer-events: none;
-	transition: 0.3s;
-}
-
-/* Анимация при фокусе и вводе текста */
-input:focus + label,
-input:not(:placeholder-shown) + label {
-	top: 0;
-	font-size: 12px;
-	color: #007bff;
-	background: white;
-	padding: 0 5px;
 }
